@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#carousel img { position: absolute;
+
+	}
+
+	#carousel img {
+		position:absolute;
+		top: 0;
+		top:0;
+		width: 600px;
+		height: 400px;
+
+		display:none;
+	}
+
+	#carousel img:first-of-type {
+		display: block;
+	}
+
+	</style>
+
+</head>
+<body>
+	<div id = "carousel">
+		<img src = "http://abduzeedo.com/files/originals/3/3095216157_2cd2b3aa7a_o.jpg" alt="">
+		<img src = "http://uncrate.com/p/2012/06/nike-levis-denim-xl.jpg" alt="">
+		<img src = "http://assets.nydailynews.com/polopoly_fs/1.167978!/img/httpImage/image.jpg_gen/derivatives/article_970/alg-skateboard-dog-jpg.jpg" alt="">
+	</div>
+
+	
+	
+	<script src = "http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		//$("#carousel img").eq(0).show();
+
+		// Set up counter
+
+		var i = 0;
+
+
+		// Every 1s, do this..
+		setInterval(function){
+
+		// Hide the current image (hint:use .hide())
+
+		function showNewImage()
+		{
+			i++;
+			if(i > 0)
+			{
+				i = images.length + 1;
+			}
+			$("#carousel").attr("src", images[i]).hide(500);
+		}
+		$("#Next").click(showNewImage);
+
+		//Increase our counter
+		//If it gets too big, set it to 0
+
+		//Show the next image
+
+		},1000);
+
+
+}
+</script>
+
+</body>
+</html>
