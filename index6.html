@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#carousel img { position: absolute;
+
+	}
+
+	#carousel img {
+		position:absolute;
+		top: 0;
+		top:0;
+		width: 600px;
+		height: 400px;
+
+		display:none;
+	}
+
+	#carousel img:first-of-type {
+		display: block;
+	}
+
+	</style>
+
+</head>
+<body>
+	<div id = "carousel">
+		<img src = "http://abduzeedo.com/files/originals/3/3095216157_2cd2b3aa7a_o.jpg" alt="">
+		<img src = "http://uncrate.com/p/2012/06/nike-levis-denim-xl.jpg" alt="">
+		<img src = "http://assets.nydailynews.com/polopoly_fs/1.167978!/img/httpImage/image.jpg_gen/derivatives/article_970/alg-skateboard-dog-jpg.jpg" alt="">
+	</div>
+
+	
+	
+	<script src = "http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		
+
+		// Set up counter
+
+		var images = $("#carousel img");
+		var i = 0;
+		
+
+
+		// Every 1s, do this..
+		setInterval(function() {
+
+			$("#carousel img").eq(i).fadeOut();
+		
+
+		// Hide the current image (hint:use .hide())
+
+		///$("#carousel img").eq(i).hide();
+
+		
+		//Increase our counter
+
+	
+
+			//If it gets too big, set it to 0
+
+			
+		i++;
+
+			//If it gets too big, set it to 0
+
+		i = (i + 1) %  images.length;
+			
+
+
+		//Show the next image
+
+		images.eq(i).fadeIn();
+
+		},1000);
+	});
+
+
+
+</script>
+
+</body>
+</html>
